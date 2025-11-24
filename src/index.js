@@ -6,7 +6,9 @@ const app = express();
 
 const port = 3000;
 
- // Define your routes
+app.set('view engine', 'ejs')
+app.set('view ', 'views')
+
 
 app.get('/', (req, res) => {
 
