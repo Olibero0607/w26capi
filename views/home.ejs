@@ -1,11 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API de Notícias - Documentação</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .endpoint-card {
+            border-left: 5px solid #0d6efd;
+        }
+        code {
+            background: #e9ecef;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bem vindo ao API noticias</h1>
+
+<nav class="navbar navbar-dark bg-primary mb-4">
+    <div class="container">
+        <span class="navbar-brand mb-0 h1">API de Notícias</span>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="text-center mb-4">
+        <h2>Documentação da API</h2>
+        <p class="text-muted">
+            Esta API permite buscar, inserir, atualizar e excluir notícias armazenadas no MongoDB Atlas.
+        </p>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h4 class="card-title">Descrição Geral</h4>
+            <p class="card-text">
+                Os endpoints abaixo permitem realizar operações CRUD (Create, Read, Update, Delete)
+                sobre registros de notícias.  
+                Para as operações <strong>POST</strong>, <strong>PUT</strong> e <strong>DELETE</strong>, 
+                o corpo da requisição deve ser enviado no formato <strong>JSON</strong>.
+            </p>
+        </div>
+    </div>
+
+    <h3 class="mb-3">Endpoints</h3>
+
+    <!-- GET /noticias -->
+    <div class="card mb-3 endpoint-card shadow-sm">
+        <div class="card-body">
+            <h5><span class="badge bg-success">GET</span> /noticias</h5>
+            <p>Retorna todas as notícias.</p>
+        </div>
+    </div>
+
+    <!-- GET /noticias/id/:id -->
+    <div class="card mb-3 endpoint-card shadow-sm">
+        <div class="card-body">
+            <h5><span class="badge bg-success">GET</span> /noticias/id/:id</h5>
+            <p>Retorna uma notícia específica pelo seu <strong>ID</strong>.</p>
+        </div>
+    </div>
+
+    <!-- GET /noticias/tiponoticia/:tipo -->
+    <div class="card mb-3 endpoint-card shadow-sm">
+        <div class="card-body">
+            <h5><span class="badge bg-success">GET</span> /noticias/tiponoticia/:tipo</h5>
+            <p>Retorna notícias filtradas por <strong>tipo</strong>.</p>
+        </div>
+    </div>
+
+    <!-- POST /postnoticias -->
+    <div class="card mb-3 endpoint-card shadow-sm">
+        <div class="card-body">
+            <h5><span class="badge bg-primary">POST</span> /postnoticias</h5>
+            <p>Insere uma nova notícia.</p>
+            <p><strong>Requer JSON no corpo da requisição.</strong></p>
+        </div>
+    </div>
+
+    <!-- DELETE /delnoticias -->
+    <div class="card mb-3 endpoint-card shadow-sm">
+        <div class="card-body">
+            <h5><span class="badge bg-danger">DELETE</span> /delnoticias</h5>
+            <p>Remove uma notícia.</p>
+            <p><strong>Requer JSON no corpo da requisição.</strong></p>
+        </div>
+    </div>
+
+    <!-- PUT /putnoticias -->
+    <div class="card mb-5 endpoint-card shadow-sm">
+        <div class="card-body">
+            <h5><span class="badge bg-warning text-dark">PUT</span> /putnoticias</h5>
+            <p>Atualiza uma notícia.</p>
+            <p><strong>Requer JSON no corpo da requisição.</strong></p>
+        </div>
+    </div>
+
+    <h3>Exemplo de JSON esperado</h3>
+    <pre class="bg-light p-3 rounded">
+{
+    "id": "id-da-noticia",
+    "titulo": "Título da Notícia",
+    "conteudo": "Conteúdo da notícia",
+    "tipo": "Categoria"
+}
+    </pre>
+
+    <footer class="text-center text-muted mt-5 mb-3">
+        API de Notícias • MongoDB Atlas • Página Inicial
+    </footer>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

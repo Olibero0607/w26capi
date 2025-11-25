@@ -9,12 +9,16 @@ const port = 3000;
 app.set('view engine', 'ejs')
 app.set('view ', 'views')
 
+require("../db/dbconnet")(app);
+require("../rotas/home")(app);
 
-app.get('/', (req, res) => {
+require("../rotas/getnoticias")(app);
+require("../rotas/getidnoticias")(app);
+require("../rotas/gettiponoticias")(app);
 
-  res.json({ message: 'Hello from Express on Vercel!' });
-
-});
+require("../rotas/postnoticias")(app);
+require("../rotas/putnoticias")(app);
+require("../rotas/delnoticias")(app);
 
 app.listen(port, () => {
 
