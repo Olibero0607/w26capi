@@ -1,5 +1,5 @@
 module.exports=(app)=>{
-    app.get("/noticias/tipo/:tipo", async (req, res)=>{
+    app.get("/noticias/tipo/:tiponoticias", async (req, res)=>{
         res.send(req.params.tiponoticias)
  })
 }
